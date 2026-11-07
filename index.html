@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=f15-flight-v5">
+  <link rel="stylesheet" href="style.css?v=f15-sortie-v6">
 </head>
 <body class="is-loading">
   <!-- LOADER: F-15の影が左から右へ通過 -->
@@ -54,8 +54,9 @@
       <div class="hud-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="hero-inner">
         <div class="hero-flight" id="hero-flight">
-          <img class="hero-aircraft" src="assets/f15-illustration-v1.png" alt="光の軌跡を引いて飛ぶF-15" width="1254" height="1254" fetchpriority="high">
-          <button class="flight-toggle" id="flight-toggle" type="button" aria-pressed="false" aria-label="F-15の飛行アニメーションを一時停止">飛行を一時停止</button>
+          <div class="aircraft-route">
+            <img class="hero-aircraft" src="assets/f15-illustration-v1.png" alt="旋回しながら飛ぶF-15" width="1254" height="1254" fetchpriority="high">
+          </div>
         </div>
         <p class="eyebrow"><span class="blink">●</span> CLEARED FOR TAKEOFF — OKINAWA</p>
         <h1 class="hero-title">
@@ -271,6 +272,6 @@
     <a class="dialog-link" id="dialog-link" href="#" target="_blank" rel="noopener" hidden>サイトを見る ↗</a>
   </dialog>
 
-  <script src="script.js?v=f15-flight-v5"></script>
+  <script src="script.js?v=f15-sortie-v6"></script>
 </body>
 </html>

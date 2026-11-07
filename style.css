@@ -179,50 +179,60 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
 .hud-frame i:nth-child(3) { bottom: 0; left: 0; border-right: 0; border-top: 0; }
 .hud-frame i:nth-child(4) { bottom: 0; right: 0; border-left: 0; border-top: 0; }
 
-/* The flight stays in its own space above the wordmark. */
+/* A continuous flight path: the nose follows its tangent; banking stays on the image. */
 .hero-flight {
-  --flight-x: clamp(24px, 8vw, 130px);
   position: relative;
-  padding: 34px 0 46px;
+  width: min(920px, 100%);
+  height: clamp(230px, 30vw, 330px);
   margin: -24px auto 12px;
-}
-.hero-aircraft {
-  width: clamp(180px, 23vw, 280px);
-  height: auto;
-  margin: 0 auto;
+  perspective: 800px;
   pointer-events: none;
-  transform-origin: 50% 50%;
-  animation: aircraft-flight 12s ease-in-out infinite;
 }
-@keyframes aircraft-flight {
-  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-  18% { transform: translate(var(--flight-x), -24px) rotate(12deg) scale(.88); }
-  38% { transform: translate(calc(var(--flight-x) * .55), -38px) rotate(-10deg) scale(.82); }
-  62% { transform: translate(calc(var(--flight-x) * -1), -16px) rotate(-18deg) scale(.94); }
-  82% { transform: translate(calc(var(--flight-x) * -.45), 0) rotate(8deg) scale(1); }
-}
-.hero-flight.is-paused .hero-aircraft { animation-play-state: paused; }
-.flight-toggle {
+.aircraft-route {
   position: absolute;
-  bottom: 0;
+  width: clamp(110px, 14vw, 190px);
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  padding: 5px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--bg);
-  color: var(--muted);
-  font: inherit;
-  font-size: .7rem;
-  white-space: nowrap;
-  cursor: pointer;
+  transform: translate(-50%, -50%);
 }
-.flight-toggle:hover { color: var(--text); border-color: var(--glow); }
-.flight-toggle:focus-visible { outline: 2px solid var(--glow); outline-offset: 4px; }
+.hero-aircraft { width: 100%; height: auto; }
+.hero-flight.has-flight-path .aircraft-route {
+  top: 0;
+  left: 0;
+  transform: none;
+  offset-path: var(--flight-path);
+  offset-anchor: center;
+  /* The illustration's nose points 45 degrees above the horizontal. */
+  offset-rotate: auto 45deg;
+  animation: aircraft-sortie 7s linear infinite;
+}
+.hero-flight.has-flight-path .hero-aircraft {
+  animation: aircraft-bank 7s linear infinite;
+  transform-origin: center;
+}
+@keyframes aircraft-sortie {
+  0% { offset-distance: 0%; }
+  25% { offset-distance: 18%; }
+  45% { offset-distance: 48%; }
+  70% { offset-distance: 78%; }
+  100% { offset-distance: 100%; }
+}
+@keyframes aircraft-bank {
+  0%, 100% { transform: rotate3d(1, -1, 0, -12deg) scale(1); }
+  20% { transform: rotate3d(1, -1, 0, 0deg) scale(.76); }
+  35% { transform: rotate3d(1, -1, 0, 46deg) scale(.7); }
+  50% { transform: rotate3d(1, -1, 0, 32deg) scale(.85); }
+  68% { transform: rotate3d(1, -1, 0, 0deg) scale(1); }
+  86% { transform: rotate3d(1, -1, 0, -40deg) scale(.92); }
+}
 @media (prefers-reduced-motion: reduce) {
-  .hero-flight { padding: 0; margin: 0 auto 16px; }
-  .hero-aircraft { animation: none; transform: none; }
-  .flight-toggle { display: none; }
+  .hero-flight.has-flight-path .aircraft-route {
+    offset-path: none;
+    animation: none;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero-flight.has-flight-path .hero-aircraft { animation: none; transform: none; }
 }
 
 .hero-title {

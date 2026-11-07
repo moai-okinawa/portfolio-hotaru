@@ -295,14 +295,22 @@ if (!reduceMotion) {
   requestAnimationFrame(draw);
 }
 
-/* ---------- Hero flight: user-controlled pause ---------- */
-const flightToggle = document.getElementById("flight-toggle");
+/* ---------- Hero flight: responsive path with tangent-aligned heading ---------- */
 const heroFlight = document.getElementById("hero-flight");
-if (flightToggle && heroFlight) {
-  flightToggle.addEventListener("click", () => {
-    const paused = heroFlight.classList.toggle("is-paused");
-    flightToggle.setAttribute("aria-pressed", String(paused));
-    flightToggle.setAttribute("aria-label", paused ? "F-15の飛行アニメーションを再開" : "F-15の飛行アニメーションを一時停止");
-    flightToggle.textContent = paused ? "飛行を再開" : "飛行を一時停止";
-  });
+if (heroFlight && CSS.supports("offset-path", 'path("M0 0 L1 1")')) {
+  const updateFlightPath = () => {
+    const route = heroFlight.querySelector(".aircraft-route");
+    const width = heroFlight.clientWidth;
+    const height = heroFlight.clientHeight;
+    // Reserve room for the rotated image at every edge of the flight area.
+    const inset = route.offsetWidth * Math.SQRT2 / 2 + 8;
+    const x = (value) => inset + (width - inset * 2) * value;
+    const y = (value) => inset + (height - inset * 2) * value;
+    const point = (px, py) => `${x(px).toFixed(2)} ${y(py).toFixed(2)}`;
+    const path = `M ${point(.12, .65)} C ${point(.25, .18)}, ${point(.55, .02)}, ${point(.76, .2)} C ${point(1, .35)}, ${point(.96, .72)}, ${point(.72, .85)} C ${point(.48, 1)}, ${point(.08, .92)}, ${point(.05, .8)} C ${point(.02, .74)}, ${point(.107, .697)}, ${point(.12, .65)} Z`;
+    heroFlight.style.setProperty("--flight-path", `path("${path}")`);
+    heroFlight.classList.add("has-flight-path");
+  };
+  updateFlightPath();
+  new ResizeObserver(updateFlightPath).observe(heroFlight);
 }
