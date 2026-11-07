@@ -3,73 +3,178 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ホタル | Portfolio</title>
-  <meta name="description" content="ホタルのポートフォリオ。沖縄からAIとWebで、身近な仕事を少し明るくするものづくりをしています。">
+  <title>音速のホタル | Portfolio</title>
+  <meta name="description" content="元F-15戦闘機パイロットのホタルのポートフォリオ。沖縄からAIとWebで、アイデアを音速でカタチにします。">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="fireflies" aria-hidden="true"></canvas>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <a class="logo" href="#top">hotaru<span>.</span></a>
-    <nav aria-label="メインメニュー">
+  <!-- HUD（スクロール速度をマッハ表示） -->
+  <aside class="hud" aria-hidden="true">
+    <div class="hud-row"><span>SPD</span><b id="hud-mach">M 0.00</b></div>
+    <div class="hud-row"><span>ALT</span><b id="hud-alt">00000</b></div>
+    <div class="hud-bar"><i id="hud-progress"></i></div>
+  </aside>
+
+  <header class="site-header" id="header">
+    <a class="brand" href="#top" aria-label="音速のホタル トップへ">
+      <img src="assets/logo-mark.svg" alt="" width="40" height="40">
+      <span class="brand-text"><b>音速のホタル</b><small>SONIC HOTARU</small></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
+    <nav id="nav" aria-label="メインメニュー">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#works">Works</a>
-      <a href="#contact">Contact</a>
+      <a href="#flight">Flight Plan</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </nav>
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
-      <p class="eyebrow">Okinawa / AI &amp; Web</p>
-      <h1>小さな光で、<br>仕事を少し明るく。</h1>
-      <p class="lead">ホタルです。沖縄を拠点に、AIとWebを使って<br class="pc">日々の仕事をラクにする仕組みをつくっています。</p>
-      <a class="btn" href="#works">制作物を見る</a>
+      <div class="hud-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="hero-inner">
+        <div class="hero-mark">
+          <span class="shock s1"></span><span class="shock s2"></span><span class="shock s3"></span>
+          <img src="assets/logo-mark.svg" alt="音速のホタル ロゴマーク" width="220" height="220">
+        </div>
+        <p class="eyebrow"><span class="blink">●</span> CLEARED FOR TAKEOFF — OKINAWA</p>
+        <h1 class="hero-title">
+          <span class="line"><span>音速の</span></span>
+          <span class="line"><span class="glow-text">ホタル</span></span>
+        </h1>
+        <p class="hero-copy">思いついたら、<em>音速</em>でカタチに。<br>小さな光で、仕事を明るく。</p>
+        <p class="hero-lead">元F-15戦闘機パイロット。いまは沖縄で、AIとWebを使って<br class="pc">アイデアを「動くもの」へ最短距離で届けています。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#works"><span>制作物を見る</span></a>
+          <a class="btn btn-ghost" href="#contact"><span>相談する</span></a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="下へスクロール"><span></span>SCROLL</a>
     </section>
 
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>AI ✦ WEB ✦ AUTOMATION ✦ OKINAWA ✦ MACH SPEED ✦ SMALL LIGHT ✦ </span>
+        <span>AI ✦ WEB ✦ AUTOMATION ✦ OKINAWA ✦ MACH SPEED ✦ SMALL LIGHT ✦ </span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
     <section id="about" class="section">
-      <h2 class="section-title"><span>01</span>About</h2>
+      <h2 class="section-title reveal"><span class="num">01</span>About<small>パイロットから、つくる人へ</small></h2>
       <div class="about">
-        <div class="avatar" aria-hidden="true">🌿</div>
-        <div>
-          <p>はじめまして、ホタルです。「技術はむずかしいもの」ではなく、「暮らしや仕事をそっと照らすもの」だと思っています。</p>
-          <p>地域のお店や事業者さんと一緒に、Webサイト制作、AIを使った業務効率化、ちょっとした自動化ツールづくりに取り組んでいます。AI教室MOAIでの学びをもとに、作っては試して、を繰り返しています。</p>
+        <figure class="about-photo reveal">
+          <img src="assets/cockpit.jpg" alt="F-15のコックピットから敬礼するホタル" loading="lazy">
+          <figcaption><span>TAC NAME</span>HOTARU</figcaption>
+        </figure>
+        <div class="about-text reveal">
+          <p class="about-lead">空で学んだのは、<br><strong>「速く、正確に、仲間と飛ぶ」</strong>こと。</p>
+          <p>はじめまして、ホタルです。「ホタル」は、F-15戦闘機のパイロットだったころのタックネーム（パイロット同士の呼び名）。音速の世界で、一瞬の判断を積み重ねてきました。</p>
+          <p>いまは沖縄を拠点に、AIとWebで地域のお店や事業者さんの仕事を軽くする仕組みづくりをしています。チェックリストで確実に進め、試作は素早く、改善は何度でも。コックピットで身につけた感覚を、ものづくりに生かしています。</p>
+          <ul class="about-tags">
+            <li>元F-15パイロット</li>
+            <li>TAC NAME: HOTARU</li>
+            <li>沖縄拠点</li>
+            <li>AI教室 MOAI</li>
+          </ul>
         </div>
+      </div>
+
+      <div class="principles">
+        <article class="principle reveal">
+          <span class="p-num">01</span>
+          <h3>音速で試す</h3>
+          <p>完璧な計画より、まず動く試作。見て・触って・直すをすばやく回します。</p>
+        </article>
+        <article class="principle reveal">
+          <span class="p-num">02</span>
+          <h3>確実に飛ぶ</h3>
+          <p>速さと同じくらい、安全と確実さ。チェックリストで抜け漏れなく進めます。</p>
+        </article>
+        <article class="principle reveal">
+          <span class="p-num">03</span>
+          <h3>そっと照らす</h3>
+          <p>主役は使う人。ホタルの光のように、毎日の仕事を少し明るくします。</p>
+        </article>
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" class="section">
-      <h2 class="section-title"><span>02</span>Skills</h2>
-      <ul class="skills">
-        <li><strong>AI活用</strong><span>ChatGPT / Claude / プロンプト設計 / 業務フロー整理</span></li>
-        <li><strong>Web制作</strong><span>HTML / CSS / JavaScript / WordPress</span></li>
-        <li><strong>自動化</strong><span>Googleスプレッドシート / GAS / ノーコード連携</span></li>
-        <li><strong>発信</strong><span>LP設計 / SNS投稿づくり / 資料作成</span></li>
-      </ul>
+      <h2 class="section-title reveal"><span class="num">02</span>Skills<small>搭載装備</small></h2>
+      <div class="skills">
+        <article class="skill reveal">
+          <div class="skill-head"><span class="skill-icon">◎</span><h3>AI活用</h3></div>
+          <p>ChatGPT / Claude / プロンプト設計 / 業務フロー整理</p>
+          <div class="meter"><i style="--v:92%"></i></div>
+        </article>
+        <article class="skill reveal">
+          <div class="skill-head"><span class="skill-icon">◇</span><h3>Web制作</h3></div>
+          <p>HTML / CSS / JavaScript / WordPress / Astro</p>
+          <div class="meter"><i style="--v:85%"></i></div>
+        </article>
+        <article class="skill reveal">
+          <div class="skill-head"><span class="skill-icon">⟳</span><h3>自動化</h3></div>
+          <p>スプレッドシート / GAS / ノーコード連携 / LINE</p>
+          <div class="meter"><i style="--v:80%"></i></div>
+        </article>
+        <article class="skill reveal">
+          <div class="skill-head"><span class="skill-icon">✦</span><h3>発信・教える</h3></div>
+          <p>LP設計 / SNS / セミナー・AI講座の講師</p>
+          <div class="meter"><i style="--v:88%"></i></div>
+        </article>
+      </div>
     </section>
 
+    <!-- WORKS -->
     <section id="works" class="section">
-      <h2 class="section-title"><span>03</span>Works</h2>
-      <p class="note">※ 掲載中の制作物はサンプルです。順次差し替えます。</p>
+      <h2 class="section-title reveal"><span class="num">03</span>Works<small>飛行記録</small></h2>
+      <p class="note reveal">※ 掲載中の制作物はサンプルです。順次差し替えます。</p>
       <div class="works" id="works-list"></div>
     </section>
 
+    <!-- FLIGHT PLAN -->
+    <section id="flight" class="section">
+      <h2 class="section-title reveal"><span class="num">04</span>Flight Plan<small>進め方</small></h2>
+      <ol class="flight">
+        <li class="reveal"><span class="leg">LEG 1</span><h3>ブリーフィング</h3><p>困りごとと目的をヒアリング。ゴールを一緒に決めます。</p></li>
+        <li class="reveal"><span class="leg">LEG 2</span><h3>テイクオフ</h3><p>まず動く試作をすばやく用意。実物を見ながら話せます。</p></li>
+        <li class="reveal"><span class="leg">LEG 3</span><h3>巡航・調整</h3><p>使ってみた声をもとに改善。速さと確実さを両立します。</p></li>
+        <li class="reveal"><span class="leg">LEG 4</span><h3>ランディング</h3><p>公開・運用まで伴走。使い方もわかりやすくお伝えします。</p></li>
+      </ol>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="section contact">
-      <h2 class="section-title"><span>04</span>Contact</h2>
-      <p>お仕事のご相談・ご感想など、お気軽にどうぞ。</p>
-      <a class="btn" href="https://github.com/moai-okinawa" target="_blank" rel="noopener">GitHub</a>
+      <div class="contact-box reveal">
+        <p class="eyebrow">READY TO SCRAMBLE?</p>
+        <h2>そのアイデア、<br><span class="glow-text">音速</span>で飛ばしましょう。</h2>
+        <p>お仕事のご相談・ご感想など、お気軽にどうぞ。</p>
+        <a class="btn btn-primary btn-lg" href="https://github.com/moai-okinawa" target="_blank" rel="noopener"><span>GitHubを見る</span></a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> hotaru</p>
+    <img src="assets/logo-mark.svg" alt="" width="32" height="32">
+    <p>&copy; <span id="year"></span> 音速のホタル / SONIC HOTARU</p>
   </footer>
 
   <dialog id="work-dialog">
     <form method="dialog">
       <button class="close" aria-label="閉じる">×</button>
     </form>
+    <div class="dialog-thumb" id="dialog-thumb" aria-hidden="true"></div>
     <p class="dialog-meta" id="dialog-meta"></p>
     <h3 id="dialog-title"></h3>
     <p id="dialog-body"></p>
