@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ホタル | Portfolio</title>
+  <meta name="description" content="ホタルのポートフォリオ。沖縄からAIとWebで、身近な仕事を少し明るくするものづくりをしています。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="fireflies" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="logo" href="#top">hotaru<span>.</span></a>
+    <nav aria-label="メインメニュー">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Okinawa / AI &amp; Web</p>
+      <h1>小さな光で、<br>仕事を少し明るく。</h1>
+      <p class="lead">ホタルです。沖縄を拠点に、AIとWebを使って<br class="pc">日々の仕事をラクにする仕組みをつくっています。</p>
+      <a class="btn" href="#works">制作物を見る</a>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title"><span>01</span>About</h2>
+      <div class="about">
+        <div class="avatar" aria-hidden="true">🌿</div>
+        <div>
+          <p>はじめまして、ホタルです。「技術はむずかしいもの」ではなく、「暮らしや仕事をそっと照らすもの」だと思っています。</p>
+          <p>地域のお店や事業者さんと一緒に、Webサイト制作、AIを使った業務効率化、ちょっとした自動化ツールづくりに取り組んでいます。AI教室MOAIでの学びをもとに、作っては試して、を繰り返しています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title"><span>02</span>Skills</h2>
+      <ul class="skills">
+        <li><strong>AI活用</strong><span>ChatGPT / Claude / プロンプト設計 / 業務フロー整理</span></li>
+        <li><strong>Web制作</strong><span>HTML / CSS / JavaScript / WordPress</span></li>
+        <li><strong>自動化</strong><span>Googleスプレッドシート / GAS / ノーコード連携</span></li>
+        <li><strong>発信</strong><span>LP設計 / SNS投稿づくり / 資料作成</span></li>
+      </ul>
+    </section>
+
+    <section id="works" class="section">
+      <h2 class="section-title"><span>03</span>Works</h2>
+      <p class="note">※ 掲載中の制作物はサンプルです。順次差し替えます。</p>
+      <div class="works" id="works-list"></div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2 class="section-title"><span>04</span>Contact</h2>
+      <p>お仕事のご相談・ご感想など、お気軽にどうぞ。</p>
+      <a class="btn" href="https://github.com/moai-okinawa" target="_blank" rel="noopener">GitHub</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> hotaru</p>
+  </footer>
+
+  <dialog id="work-dialog">
+    <form method="dialog">
+      <button class="close" aria-label="閉じる">×</button>
+    </form>
+    <p class="dialog-meta" id="dialog-meta"></p>
+    <h3 id="dialog-title"></h3>
+    <p id="dialog-body"></p>
+    <ul class="tags" id="dialog-tags"></ul>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
