@@ -73,7 +73,7 @@ a { color: inherit; }
   position: fixed;
   top: 0; left: 0; right: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 14px clamp(16px, 4vw, 40px);
   z-index: 10;
@@ -85,9 +85,7 @@ a { color: inherit; }
   backdrop-filter: blur(10px);
   border-color: var(--line);
 }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand > img, .site-footer > img { flex-shrink: 0; object-fit: contain; }
-.brand .brand-wordmark { width: 190px; height: auto; }
+.site-footer > img { flex-shrink: 0; object-fit: contain; }
 
 .site-header nav { display: flex; gap: 28px; align-items: center; }
 .site-header nav a {
@@ -167,7 +165,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
   place-items: center;
   text-align: center;
   position: relative;
-  padding: 140px 0 160px;
+  padding: 110px 0 140px;
 }
 .hud-frame { position: absolute; inset: 90px 0 40px; pointer-events: none; }
 .hud-frame i {
@@ -180,6 +178,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
 .hud-frame i:nth-child(2) { top: 0; right: 0; border-left: 0; border-bottom: 0; }
 .hud-frame i:nth-child(3) { bottom: 0; left: 0; border-right: 0; border-top: 0; }
 .hud-frame i:nth-child(4) { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+
+.hero-aircraft { width: clamp(180px, 23vw, 280px); height: auto; margin: 0 auto 16px; animation: fade 1s both; }
 
 .hero-title {
   width: min(760px, 100%);
@@ -525,8 +525,6 @@ dialog h3 { margin-top: 0; margin-bottom: 12px; font-size: 1.5rem; }
   }
   .site-header nav.open { opacity: 1; pointer-events: auto; transform: none; }
   .pc { display: none; }
-  .brand .brand-wordmark { width: clamp(130px, 36vw, 180px); }
-  .brand > img:first-child { width: 44px; height: 44px; }
   .hero-title { margin-bottom: 24px; }
   .skills, .flight, .works { grid-template-columns: 1fr; }
   .hud { right: 12px; bottom: 12px; min-width: 120px; font-size: 0.6rem; }
@@ -681,7 +679,7 @@ dialog h3 { margin-top: 0; margin-bottom: 12px; font-size: 1.5rem; }
 .timeline p { margin: 0; color: var(--muted); font-size: 0.92rem; }
 
 /* ---------- Header: switch to menu button on tablets ---------- */
-.site-header nav a, .brand-text b { white-space: nowrap; }
+.site-header nav a { white-space: nowrap; }
 @media (max-width: 1000px) {
   .menu-toggle {
     display: block;
