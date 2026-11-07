@@ -1,62 +1,77 @@
-// 制作物（サンプル）。差し替えるときはこの配列を編集してください。
+// 掲載する自社サービス・事業。差し替えるときはこの配列を編集してください。
 const works = [
   {
-    title: "カフェのLPサイト",
-    year: "2026",
-    icon: "☕",
+    title: "AI導入支援",
+    year: "CODEVISION",
+    icon: "🧭",
     bg: "linear-gradient(135deg,#1f3a2c,#3d5a2a)",
-    summary: "地域のカフェ向け1枚ものサイト（サンプル）",
-    body: "メニュー・営業時間・地図をスマホで見やすくまとめたランディングページ。AIで文章のたたき台を作り、店主さんの言葉に寄せて仕上げる流れを想定しています。",
-    tags: ["HTML", "CSS", "AIライティング"],
+    summary: "何から始めるか迷ったら。AI活用診断から実装まで",
+    body: "沖縄の中小企業向けに、AIで業務を回すところまで伴走するサービス。3分でできる無料AI診断や、個社の課題を整理するAI活用診断を入口に、顧問・開発・研修まで一緒に進めます。",
+    tags: ["AI活用診断", "AI顧問", "研修"],
+    url: "https://codevision.co.jp",
   },
   {
-    title: "予約管理の自動化",
-    year: "2026",
-    icon: "📅",
+    title: "AI業務代行",
+    year: "CODEVISION",
+    icon: "⚙️",
     bg: "linear-gradient(135deg,#132f3a,#1f4f4a)",
-    summary: "フォーム→スプレッドシート→通知の仕組み（サンプル）",
-    body: "問い合わせフォームの内容をスプレッドシートに自動で記録し、担当者に通知する仕組み。手作業の転記をなくすことを目指しました。",
-    tags: ["Googleフォーム", "GAS", "自動化"],
+    summary: "経理・顧客対応・マーケティング運用を、AIと人のチームに",
+    body: "経理・顧客対応・マーケティング運用を、AIと人のチームにまるごと任せられるサービス。ツールを渡すだけでなく、成果が出る運用まで引き受けます。",
+    tags: ["業務代行", "バックオフィス", "AI運用"],
+    url: "https://codevision.co.jp",
   },
   {
-    title: "AIプロンプト集",
-    year: "2026",
-    icon: "💡",
-    bg: "linear-gradient(135deg,#3a3413,#4f4a1f)",
-    summary: "日々の業務で使えるプロンプトのまとめ（サンプル）",
-    body: "メール返信、議事録要約、SNS投稿案づくりなど、よく使う場面ごとにプロンプトを整理した資料。初めてAIを使う人でも真似できる形にしています。",
-    tags: ["ChatGPT", "Claude", "資料作成"],
-  },
-  {
-    title: "AI講座のスライド",
-    year: "2026",
+    title: "AI教室 MOAI",
+    year: "CODEVISION",
     icon: "🎓",
     bg: "linear-gradient(135deg,#2a1f3a,#3d2a5a)",
-    summary: "初心者向けAI活用講座の教材（サンプル）",
-    body: "AIにはじめて触れる人向けの講座スライド。専門用語を使わず、明日から使える例を中心に組み立てています。",
-    tags: ["講座", "スライド", "AI入門"],
+    summary: "沖縄の生成AIスクール。勉強会から、仕事に活かすAIの学びへ",
+    body: "沖縄で生成AIを学べるスクール・コミュニティ。無料の勉強会から、仕事で使えるレベルまで仲間と一緒に学べます。このポートフォリオもMOAIの取り組みの一つです。",
+    tags: ["生成AI", "スクール", "コミュニティ"],
+    url: "https://moai.okinawa",
   },
   {
-    title: "LINE自動応答",
-    year: "2026",
-    icon: "💬",
-    bg: "linear-gradient(135deg,#123a22,#1f5a33)",
-    summary: "よくある質問に自動で答える仕組み（サンプル）",
-    body: "営業時間や予約方法など、よくある問い合わせにLINEで自動返信。スタッフが本当に必要な対応に集中できるようにします。",
-    tags: ["LINE", "自動化", "接客"],
+    title: "ドローン赤外線外壁点検",
+    year: "沖縄ドローン",
+    icon: "🛰️",
+    bg: "linear-gradient(135deg,#3a2a13,#5a3f1f)",
+    summary: "足場なしで、建物の外壁を赤外線カメラで調査",
+    body: "ドローンに搭載した赤外線カメラで、建物外壁の浮きや劣化を調べるサービス。建築基準法の定期報告で認められた手法で、足場を組まずに短期間で調査できます。",
+    tags: ["ドローン", "赤外線", "外壁調査"],
   },
   {
-    title: "沖縄観光マップ",
-    year: "2026",
-    icon: "🗺️",
+    title: "WHOOPS！ドローンスクール沖縄北部校",
+    year: "沖縄ドローン",
+    icon: "🚁",
     bg: "linear-gradient(135deg,#0f2f3f,#145a6a)",
-    summary: "おすすめスポットをまとめた地図ページ（サンプル）",
-    body: "地元目線のおすすめスポットを地図にまとめたWebページ。スマホで現在地から近い場所を探しやすくしています。",
-    tags: ["地図", "JavaScript", "観光"],
+    summary: "国家資格（二等無人航空機操縦士）の登録講習機関",
+    body: "国の登録講習機関として、二等無人航空機操縦士（マルチローター・基本）の国家資格講習を行うドローンスクール。沖縄北部でドローンの操縦を学べます。",
+    tags: ["国家資格", "二等", "スクール"],
   },
 ];
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Loader: F-15の影が左→右へ通過 ---------- */
+(function loader() {
+  const el = document.getElementById("loader");
+  const finish = () => {
+    document.body.classList.remove("is-loading");
+    el.classList.add("done");
+    setTimeout(() => el.remove(), 700);
+  };
+  let seen = false;
+  try { seen = sessionStorage.getItem("hotaru-loader") === "1"; } catch (e) {}
+  if (reduceMotion || seen) {
+    el.remove();
+    document.body.classList.remove("is-loading");
+    return;
+  }
+  try { sessionStorage.setItem("hotaru-loader", "1"); } catch (e) {}
+  el.classList.add("play");
+  el.addEventListener("click", finish, { once: true });
+  setTimeout(finish, 2300);
+})();
 
 /* ---------- Works ---------- */
 const list = document.getElementById("works-list");
@@ -76,7 +91,7 @@ works.forEach((work, i) => {
     </div>`;
   button.querySelector(".work-thumb").style.background = work.bg;
   button.querySelector(".work-thumb span").textContent = work.icon;
-  button.querySelector(".work-meta").textContent = `FLIGHT ${String(i + 1).padStart(2, "0")} / ${work.year}`;
+  button.querySelector(".work-meta").textContent = `MISSION ${String(i + 1).padStart(2, "0")} / ${work.year}`;
   button.querySelector("h3").textContent = work.title;
   button.querySelector("p").textContent = work.summary;
   button.addEventListener("click", () => openWork(work, i));
@@ -88,7 +103,7 @@ function openWork(work, i) {
   const thumb = document.getElementById("dialog-thumb");
   thumb.style.background = work.bg;
   thumb.textContent = work.icon;
-  document.getElementById("dialog-meta").textContent = `FLIGHT ${String(i + 1).padStart(2, "0")} / ${work.year}`;
+  document.getElementById("dialog-meta").textContent = `MISSION ${String(i + 1).padStart(2, "0")} / ${work.year}`;
   document.getElementById("dialog-title").textContent = work.title;
   document.getElementById("dialog-body").textContent = work.body;
   document.getElementById("dialog-tags").replaceChildren(
@@ -98,6 +113,13 @@ function openWork(work, i) {
       return li;
     })
   );
+  const link = document.getElementById("dialog-link");
+  if (work.url) {
+    link.href = work.url;
+    link.hidden = false;
+  } else {
+    link.hidden = true;
+  }
   dialog.showModal();
 }
 

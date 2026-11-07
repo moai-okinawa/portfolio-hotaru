@@ -11,7 +11,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=f15-v1">
 </head>
-<body>
+<body class="is-loading">
+  <!-- LOADER: F-15の影が左から右へ通過 -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-grid"></div>
+    <div class="loader-jet">
+      <span class="loader-burner"></span>
+      <svg viewBox="-110 -90 220 180" class="loader-shadow">
+        <g transform="rotate(90)">
+          <path d="M0,-100 L6,-72 L10,-50 L18,-38 L20,-14 L78,22 L78,36 L24,40 L26,58 L58,80 L58,90 L26,88 L22,100 L4,100 L0,96 L-4,100 L-22,100 L-26,88 L-58,90 L-58,80 L-26,58 L-24,40 L-78,36 L-78,22 L-20,-14 L-18,-38 L-10,-50 L-6,-72 Z"/>
+        </g>
+      </svg>
+    </div>
+    <p class="loader-text">SONIC HOTARU<span>音速のホタル</span></p>
+  </div>
   <canvas id="sky" aria-hidden="true"></canvas>
   <div class="cursor-glow" aria-hidden="true"></div>
 
@@ -30,6 +43,7 @@
     <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
     <nav id="nav" aria-label="メインメニュー">
       <a href="#about">About</a>
+      <a href="#now">Now</a>
       <a href="#skills">Skills</a>
       <a href="#works">Works</a>
       <a href="#flight">Flight Plan</a>
@@ -52,7 +66,7 @@
           <span class="line"><span class="glow-text">ホタル</span></span>
         </h1>
         <p class="hero-copy">思いついたら、<em>音速</em>でカタチに。<br>小さな光で、仕事を明るく。</p>
-        <p class="hero-lead">元F-15戦闘機パイロット。いまは沖縄で、AIとWebを使って<br class="pc">アイデアを「動くもの」へ最短距離で届けています。</p>
+        <p class="hero-lead">元F-15戦闘機パイロット。株式会社CODEVISION 代表。<br>沖縄で、AIとドローンを使って事業を前に進めています。</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#works"><span>制作物を見る</span></a>
           <a class="btn btn-ghost" href="#contact"><span>相談する</span></a>
@@ -80,12 +94,14 @@
         <div class="about-text reveal">
           <p class="about-lead">空で学んだのは、<br><strong>「速く、正確に、仲間と飛ぶ」</strong>こと。</p>
           <p>はじめまして、ホタルです。「ホタル」は、F-15戦闘機のパイロットだったころのタックネーム（パイロット同士の呼び名）。音速の世界で、一瞬の判断を積み重ねてきました。</p>
-          <p>いまは沖縄を拠点に、AIとWebで地域のお店や事業者さんの仕事を軽くする仕組みづくりをしています。チェックリストで確実に進め、試作は素早く、改善は何度でも。コックピットで身につけた感覚を、ものづくりに生かしています。</p>
+          <p>空を降りてから選んだのは、沖縄で事業をつくる道。コックピットで学んだ「限られた時間で状況をつかみ、決めて、動く」力は、経営やAI導入の現場でもそのまま生きています。</p>
+          <p>いまは株式会社CODEVISIONの代表として、中小企業のAI導入と業務代行、AI教室MOAIを運営。沖縄ドローン株式会社の取締役として、ドローンによる外壁点検と国家資格スクールにも取り組んでいます。空と地上、両方の視点から「人が動き出せる仕組み」をつくるのが仕事です。</p>
           <ul class="about-tags">
             <li>元F-15パイロット</li>
             <li>TAC NAME: HOTARU</li>
+            <li>CODEVISION 代表</li>
+            <li>沖縄ドローン 取締役</li>
             <li>沖縄拠点</li>
-            <li>AI教室 MOAI</li>
           </ul>
         </div>
       </div>
@@ -109,9 +125,36 @@
       </div>
     </section>
 
+    <!-- NOW -->
+    <section id="now" class="section">
+      <h2 class="section-title reveal"><span class="num">02</span>Now<small>現在の任務</small></h2>
+      <div class="roles">
+        <article class="role reveal">
+          <p class="role-tag">CEO</p>
+          <h3>株式会社CODEVISION<small>代表</small></h3>
+          <p>「人が動き出せば、事業は動く。」をミッションに、沖縄の中小企業のAI導入を支援。ツールを入れて終わりにせず、業務がAIで回るところまで伴走します。</p>
+          <ul class="role-list">
+            <li>AI導入支援・AI活用診断</li>
+            <li>AI業務代行（経理・顧客対応・マーケティング運用）</li>
+            <li>AI教室 MOAI</li>
+          </ul>
+          <a class="role-link" href="https://codevision.co.jp" target="_blank" rel="noopener">codevision.co.jp ↗</a>
+        </article>
+        <article class="role reveal">
+          <p class="role-tag">DIRECTOR</p>
+          <h3>沖縄ドローン株式会社<small>取締役</small></h3>
+          <p>パイロットとして空を飛んだ経験を、今度はドローンで地域に。赤外線カメラによる建物の外壁点検と、国家資格（二等）の講習を行っています。</p>
+          <ul class="role-list">
+            <li>ドローン赤外線外壁点検</li>
+            <li>WHOOPS！ドローンスクール沖縄北部校（国家資格 二等講習）</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- SKILLS -->
     <section id="skills" class="section">
-      <h2 class="section-title reveal"><span class="num">02</span>Skills<small>搭載装備</small></h2>
+      <h2 class="section-title reveal"><span class="num">03</span>Skills<small>搭載装備</small></h2>
       <div class="skills">
         <article class="skill reveal">
           <div class="skill-head"><span class="skill-icon">◎</span><h3>AI活用</h3></div>
@@ -133,19 +176,29 @@
           <p>LP設計 / SNS / セミナー・AI講座の講師</p>
           <div class="meter"><i style="--v:88%"></i></div>
         </article>
+        <article class="skill reveal">
+          <div class="skill-head"><span class="skill-icon">✈</span><h3>飛行・ドローン</h3></div>
+          <p>元F-15パイロット / ドローン赤外線外壁点検 / 国家資格スクール運営</p>
+          <div class="meter"><i style="--v:96%"></i></div>
+        </article>
+        <article class="skill reveal">
+          <div class="skill-head"><span class="skill-icon">▲</span><h3>経営・事業づくり</h3></div>
+          <p>会社経営 / 新規事業の立ち上げ / 宿泊施設などの運営</p>
+          <div class="meter"><i style="--v:86%"></i></div>
+        </article>
       </div>
     </section>
 
     <!-- WORKS -->
     <section id="works" class="section">
-      <h2 class="section-title reveal"><span class="num">03</span>Works<small>飛行記録</small></h2>
-      <p class="note reveal">※ 掲載中の制作物はサンプルです。順次差し替えます。</p>
+      <h2 class="section-title reveal"><span class="num">04</span>Works<small>飛行記録</small></h2>
+      <p class="note reveal">自社で運営しているサービス・事業です。カードを押すと詳しく見られます。</p>
       <div class="works" id="works-list"></div>
     </section>
 
     <!-- FLIGHT PLAN -->
     <section id="flight" class="section">
-      <h2 class="section-title reveal"><span class="num">04</span>Flight Plan<small>進め方</small></h2>
+      <h2 class="section-title reveal"><span class="num">05</span>Flight Plan<small>進め方</small></h2>
       <ol class="flight">
         <li class="reveal"><span class="leg">LEG 1</span><h3>ブリーフィング</h3><p>困りごとと目的をヒアリング。ゴールを一緒に決めます。</p></li>
         <li class="reveal"><span class="leg">LEG 2</span><h3>テイクオフ</h3><p>まず動く試作をすばやく用意。実物を見ながら話せます。</p></li>
@@ -159,8 +212,14 @@
       <div class="contact-box reveal">
         <p class="eyebrow">READY TO SCRAMBLE?</p>
         <h2>そのアイデア、<br><span class="glow-text">音速</span>で飛ばしましょう。</h2>
-        <p>お仕事のご相談・ご感想など、お気軽にどうぞ。</p>
-        <a class="btn btn-primary btn-lg" href="https://github.com/moai-okinawa" target="_blank" rel="noopener"><span>GitHubを見る</span></a>
+        <p>AI導入・ドローン・講演のご相談など、お気軽にどうぞ。</p>
+        <a class="btn btn-primary btn-lg" href="mailto:sakugawa@codevision.co.jp"><span>メールで相談する</span></a>
+        <p class="contact-mail">sakugawa@codevision.co.jp</p>
+        <ul class="sns">
+          <li><a href="https://x.com/hotaru040608" target="_blank" rel="noopener">X<span>@hotaru040608</span></a></li>
+          <li><a href="https://www.instagram.com/hotaru040608/" target="_blank" rel="noopener">Instagram<span>@hotaru040608</span></a></li>
+          <li><a href="https://codevision.co.jp" target="_blank" rel="noopener">CODEVISION<span>codevision.co.jp</span></a></li>
+        </ul>
       </div>
     </section>
   </main>
@@ -179,6 +238,7 @@
     <h3 id="dialog-title"></h3>
     <p id="dialog-body"></p>
     <ul class="tags" id="dialog-tags"></ul>
+    <a class="dialog-link" id="dialog-link" href="#" target="_blank" rel="noopener" hidden>サイトを見る ↗</a>
   </dialog>
 
   <script src="script.js"></script>
