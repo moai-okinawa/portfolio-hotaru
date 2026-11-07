@@ -294,3 +294,15 @@ if (!reduceMotion) {
   window.addEventListener("resize", resize);
   requestAnimationFrame(draw);
 }
+
+/* ---------- Hero flight: user-controlled pause ---------- */
+const flightToggle = document.getElementById("flight-toggle");
+const heroFlight = document.getElementById("hero-flight");
+if (flightToggle && heroFlight) {
+  flightToggle.addEventListener("click", () => {
+    const paused = heroFlight.classList.toggle("is-paused");
+    flightToggle.setAttribute("aria-pressed", String(paused));
+    flightToggle.setAttribute("aria-label", paused ? "F-15の飛行アニメーションを再開" : "F-15の飛行アニメーションを一時停止");
+    flightToggle.textContent = paused ? "飛行を再開" : "飛行を一時停止";
+  });
+}
