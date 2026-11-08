@@ -4,7 +4,6 @@ const works = [
     title: "AI導入支援",
     year: "CODEVISION",
     visual: "strategy",
-    cover: "AI / STRATEGY",
     summary: "何から始めるか迷ったら。AI活用診断から実装まで",
     body: "沖縄の中小企業向けに、AIで業務を回すところまで伴走するサービス。3分でできる無料AI診断や、個社の課題を整理するAI活用診断を入口に、顧問・開発・研修まで一緒に進めます。",
     tags: ["AI活用診断", "AI顧問", "研修"],
@@ -14,7 +13,6 @@ const works = [
     title: "AI業務代行",
     year: "CODEVISION",
     visual: "operations",
-    cover: "AI / OPERATIONS",
     summary: "経理・顧客対応・マーケティング運用を、AIと人のチームに",
     body: "経理・顧客対応・マーケティング運用を、AIと人のチームにまるごと任せられるサービス。ツールを渡すだけでなく、成果が出る運用まで引き受けます。",
     tags: ["業務代行", "バックオフィス", "AI運用"],
@@ -24,7 +22,6 @@ const works = [
     title: "AIスクール MOAI",
     year: "CODEVISION",
     visual: "learning",
-    cover: "MOAI",
     summary: "沖縄の生成AIスクール。勉強会から、仕事に活かすAIの学びへ",
     body: "沖縄で生成AIを学べるスクール・コミュニティ。無料の勉強会から、仕事で使えるレベルまで仲間と一緒に学べます。このポートフォリオもMOAIの取り組みの一つです。",
     tags: ["生成AI", "スクール", "コミュニティ"],
@@ -34,7 +31,6 @@ const works = [
     title: "ドローン赤外線外壁点検",
     year: "沖縄ドローン",
     visual: "inspection",
-    cover: "AERIAL / INSPECTION",
     summary: "足場なしで、建物の外壁を赤外線カメラで調査",
     body: "ドローンに搭載した赤外線カメラで、建物外壁の浮きや劣化を調べるサービス。建築基準法の定期報告で認められた手法で、足場を組まずに短期間で調査できます。",
     tags: ["ドローン", "赤外線", "外壁調査"],
@@ -43,7 +39,6 @@ const works = [
     title: "WHOOPS！ドローンスクール沖縄北部校",
     year: "沖縄ドローン",
     visual: "flight",
-    cover: "WHOOPS!",
     summary: "国家資格（二等無人航空機操縦士）の登録講習機関",
     body: "国の登録講習機関として、二等無人航空機操縦士（マルチローター・基本）の国家資格講習を行うドローンスクール。沖縄北部でドローンの操縦を学べます。",
     tags: ["国家資格", "二等", "スクール"],
@@ -56,20 +51,11 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 const list = document.getElementById("works-list");
 const dialog = document.getElementById("work-dialog");
 
-// Decorative editorial covers share the same artwork in cards and details.
-function workVisual(work, i) {
-  const drawings = {
-    strategy: '<circle cx="270" cy="130" r="82"/><circle cx="270" cy="130" r="52"/><path d="M170 130h200M270 30v200M200 200l135-135M305 65h30v30"/><circle class="cover-fill" cx="270" cy="130" r="7"/>',
-    operations: '<path d="M150 70h70v55h70v65h70M150 190h70v-65M290 125V70h70"/><rect x="132" y="52" width="36" height="36"/><rect x="132" y="172" width="36" height="36"/><rect x="342" y="52" width="36" height="36"/><rect x="342" y="172" width="36" height="36"/><rect class="cover-fill" x="252" y="107" width="36" height="36"/>',
-    learning: '<path d="M170 165l100-58 100 58-100 58zM170 130l100-58 100 58M170 95l100-58 100 58M270 107v116"/><path class="cover-accent" d="M170 95l100-58 100 58-100 58z"/>',
-    inspection: '<path d="M180 218V67l90-30 85 30v151M180 67l90 30 85-30M270 97v121M200 94v105M225 103v96M246 111v88M290 107v92M315 98v101M337 89v110"/><path class="cover-accent" d="M155 132h220M155 122v20M375 122v20"/>',
-    flight: '<path d="M215 80l110 100M325 80L215 180"/><circle cx="210" cy="75" r="35"/><circle cx="330" cy="75" r="35"/><circle cx="210" cy="185" r="35"/><circle cx="330" cy="185" r="35"/><path class="cover-accent" d="M250 110h40v40h-40zM270 48V20m-10 10 10-10 10 10"/>'
-  };
-  return `<div class="mission-cover cover-${work.visual}">
-    <span class="cover-top">SONIC HOTARU <span>PROJECT / 0${i + 1}</span></span>
-    <svg viewBox="0 0 440 260" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">${drawings[work.visual]}</svg>
-    <span class="cover-title">${work.cover.replace(' / ', '<br>')}</span>
-    <span class="cover-bottom">${work.year}<span>↗</span></span>
+// Generated photographic covers are shared by cards and details.
+function workVisual(work) {
+  return `<div class="mission-cover">
+    <img src="assets/work-${work.visual}-v1.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1024">
+    <span class="cover-caption">AI生成イメージ</span>
   </div>`;
 }
 
