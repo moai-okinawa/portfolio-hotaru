@@ -21,7 +21,7 @@ const works = [
     url: "https://codevision.co.jp",
   },
   {
-    title: "AI教室 MOAI",
+    title: "AIスクール MOAI",
     year: "CODEVISION",
     icon: "🎓",
     bg: "linear-gradient(135deg,#2a1f3a,#3d2a5a)",
