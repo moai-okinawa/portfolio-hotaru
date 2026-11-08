@@ -387,6 +387,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
 .note { color: var(--muted); font-size: 0.85rem; margin: -28px 0 32px; }
 .works { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .work {
+  display: flex;
+  flex-direction: column;
   text-align: left;
   font: inherit;
   color: inherit;
@@ -404,21 +406,23 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
   box-shadow: 0 20px 60px rgba(228, 255, 92, 0.12);
   outline: none;
 }
-.work-thumb {
-  aspect-ratio: 16 / 10;
-  display: grid;
-  place-items: center;
-  font-size: 3rem;
-  position: relative;
-  overflow: hidden;
-}
-.work-thumb::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: repeating-linear-gradient(90deg, transparent 0 22px, rgba(255, 255, 255, 0.04) 22px 23px);
-}
-.work-thumb span { position: relative; z-index: 1; transition: transform .4s; filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4)); }
-.work:hover .work-thumb span { transform: scale(1.2) rotate(-6deg); }
+.work-thumb { width: 100%; flex-shrink: 0; aspect-ratio: 16 / 10; position: relative; overflow: hidden; }
+.mission-cover { position: relative; width: 100%; height: 100%; overflow: hidden; background: #172527; color: #a8c5ba; text-align: left; }
+.cover-operations { background: #182735; color: #a6c8db; }
+.cover-learning { background: #dedfce; color: #4a6251; }
+.cover-inspection { background: #302b25; color: #ceb997; }
+.cover-flight { background: #203335; color: #a9c9c6; }
+.cover-top, .cover-bottom { position: absolute; left: 22px; right: 22px; display: flex; justify-content: space-between; align-items: center; font: 9px var(--mono); letter-spacing: .1em; z-index: 1; }
+.cover-top { top: 18px; padding-bottom: 10px; border-bottom: 1px solid currentColor; opacity: .65; }
+.cover-bottom { bottom: 16px; }
+.cover-bottom span { font-size: 20px; }
+.cover-title { position: absolute; left: 22px; bottom: 48px; z-index: 1; font-family: 'Orbitron', sans-serif; font-size: clamp(21px, 2.2vw, 30px); font-weight: 700; line-height: 1.22; letter-spacing: -.04em; color: #f2f0df; }
+.cover-learning .cover-title { color: #213b2d; font-size: 46px; }
+.cover-flight .cover-title { font-size: 35px; }
+.mission-cover svg { position: absolute; width: 100%; height: 100%; inset: 0; opacity: .5; transition: transform .6s ease, opacity .6s ease; }
+.cover-fill { fill: currentColor; }
+.cover-accent { stroke-width: 2; }
+.work:hover .mission-cover svg { transform: translateY(-4px); opacity: .8; }
 .work-body { padding: 20px 22px 24px; }
 .work-meta { font-family: var(--mono); font-size: 0.65rem; color: var(--glow); letter-spacing: 0.2em; }
 .work-body h3 { margin: 4px 0 6px; font-size: 1.1rem; }
@@ -494,7 +498,7 @@ dialog {
 dialog[open] { animation: pop .35s cubic-bezier(.2, .9, .2, 1); }
 @keyframes pop { from { opacity: 0; transform: translateY(20px) scale(.97); } }
 dialog::backdrop { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px); }
-.dialog-thumb { aspect-ratio: 16 / 7; display: grid; place-items: center; font-size: 3.4rem; margin-bottom: 24px; }
+.dialog-thumb { aspect-ratio: 16 / 9; margin-bottom: 24px; }
 dialog > p, dialog > h3, dialog > ul { margin-left: 32px; margin-right: 32px; }
 dialog h3 { margin-top: 0; margin-bottom: 12px; font-size: 1.5rem; }
 .dialog-meta { font-family: var(--mono); color: var(--glow); font-size: 0.75rem; letter-spacing: 0.2em; margin-top: 0; margin-bottom: 4px; }
