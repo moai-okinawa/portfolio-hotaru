@@ -9,22 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=f15-sortie-v6">
+  <link rel="stylesheet" href="style.css?v=f15-arrival-v7">
 </head>
-<body class="is-loading">
-  <!-- LOADER: F-15の影が左から右へ通過 -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-grid"></div>
-    <div class="loader-jet">
-      <span class="loader-burner"></span>
-      <svg viewBox="-110 -90 220 180" class="loader-shadow">
-        <g transform="rotate(90)">
-          <path d="M0,-100 L6,-72 L10,-50 L18,-38 L20,-14 L78,22 L78,36 L24,40 L26,58 L58,80 L58,90 L26,88 L22,100 L4,100 L0,96 L-4,100 L-22,100 L-26,88 L-58,90 L-58,80 L-26,58 L-24,40 L-78,36 L-78,22 L-20,-14 L-18,-38 L-10,-50 L-6,-72 Z"/>
-        </g>
-      </svg>
-    </div>
-    <p class="loader-text">SONIC HOTARU<span>音速のホタル</span></p>
-  </div>
+<body>
   <canvas id="sky" aria-hidden="true"></canvas>
   <div class="cursor-glow" aria-hidden="true"></div>
 
@@ -55,7 +42,7 @@
       <div class="hero-inner">
         <div class="hero-flight" id="hero-flight">
           <div class="aircraft-route">
-            <img class="hero-aircraft" src="assets/f15-illustration-v1.png" alt="旋回しながら飛ぶF-15" width="1254" height="1254" fetchpriority="high">
+            <img class="hero-aircraft" src="assets/f15-illustration-v1.png" alt="音速のホタルのF-15イラスト" width="1254" height="1254" fetchpriority="high">
           </div>
         </div>
         <p class="eyebrow"><span class="blink">●</span> CLEARED FOR TAKEOFF — OKINAWA</p>
@@ -272,6 +259,6 @@
     <a class="dialog-link" id="dialog-link" href="#" target="_blank" rel="noopener" hidden>サイトを見る ↗</a>
   </dialog>
 
-  <script src="script.js?v=f15-sortie-v6"></script>
+  <script src="script.js?v=f15-arrival-v7"></script>
 </body>
 </html>
